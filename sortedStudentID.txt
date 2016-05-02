@@ -1,0 +1,13 @@
+Student ID     First Name     Last Name      Preferred Name      Contact Number      Full Time      Love Java      Doing Diploma1092441        Maria          Davies         Mari                0478220117          TRUE           FALSE          PENDING
+1092442        Maria          Davies         Mary                0478220117          TRUE           FALSE          PENDING
+1092448        Albert         Collins        Al                  0478220117          FALSE          TRUE           CONFIRMED
+1103454        Daniel         White          Dan                 0478220117          TRUE           FALSE          FALSE
+1103455        Fredrick       Bloggs         Freddy              0478220117          TRUE           FALSE          PENDING
+1105654        Samantha       Brown          Sam                 0478220117          FALSE          TRUE           CONFIRMED
+1110444        David          Pyle           Dave                0478220117          TRUE           TRUE           CONFIRMED
+1117443        Oliver         Stone          Oli                 0478220117          TRUE           FALSE          FALSE
+1125443        Andrew         Smith          Andy                0478220117          FALSE          FALSE          PENDING
+1132356        Marcus         Jones          Mark                0478220117          TRUE           FALSE          PENDING
+1134456        Alan           Black          Al                  0478220117          FALSE          TRUE           CONFIRMED
+1172442        Edgar          Wright         Ed                  0478220117          TRUE           TRUE           PENDING
+1183452        Anthony        Evans          Tony                0478220117          FALSE          TRUE           CONFIRMED
