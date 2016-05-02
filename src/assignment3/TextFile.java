@@ -1,7 +1,29 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ The TextFile class is responsible for text file management. i.e. opening, reading
+ writing and closing a text file.
+ 
+ @author David Pyle 041110777
+ @version 1.0
+ @since 11/4/2016
+  
+ Methods:
+    + Scanner openFile(String path)
+    + void readFile()
+    + void writeFile(String path, ArrayList<Student> content, String headers)
+    + void closeFile()
+
+Classes this class requires    
+    java.io.BufferedWriter;
+    java.io.File;
+    java.io.FileNotFoundException;
+    java.io.FileWriter;
+    java.io.IOException;
+    java.util.ArrayList;
+    java.util.NoSuchElementException;
+    java.util.Scanner;
+    java.util.logging.Level;
+    java.util.logging.Logger;
+
  */
 package assignment3;
 
@@ -19,14 +41,19 @@ import java.util.logging.Logger;
 
 public class TextFile {
     
+    //instance variables    
+    //file input
     private Scanner input;
+    //filewriter for writing data to text file
     private FileWriter fileWriter;
     
-    public Scanner openFile(String path) {
-        
-        try {         
-            //File file = new File(".");
-            //for(String fileNames : file.list()) System.out.println(fileNames);
+    /**
+     * Opens a text file
+     * @param path location of text file to open
+     * @return input stream to file
+     */
+    public Scanner openFile(String path) {        
+        try {             
             input = new Scanner( new File(path));            
         }
         catch (FileNotFoundException fileNotFoundException) {
@@ -38,6 +65,9 @@ public class TextFile {
         return input;
     }
     
+    /**
+     * Reads the content of a text file
+     */
     public void readFile() {
         
         try {
@@ -55,7 +85,13 @@ public class TextFile {
             System.exit(1);
         }
     }
-    
+    /**
+     * Writes content to a text file
+     * 
+     * @param path  location of destination file
+     * @param content	content to write
+     * @param headers	content headers to write
+     */
     public void writeFile(String path, ArrayList<Student> content, String headers) {
         
         try {
@@ -73,9 +109,7 @@ public class TextFile {
                 } catch (IOException ex) {
                     Logger.getLogger(TextFile.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            });
-            
-          
+            });      
 
             // Always close files.
             bufferedWriter.close();
@@ -83,10 +117,12 @@ public class TextFile {
         }
         catch (IOException ex) {
             System.err.println("Error writing to file");      
-        }
-       
+        }       
     }
     
+    /**
+     * Closes the input stream to a file
+     */
     public void closeFile() {
         
         if(input != null) {

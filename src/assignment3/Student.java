@@ -1,16 +1,27 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ The Student class stores information for a student.
+ 
+ @author David Pyle 041110777
+ @version 1.0
+ @since 11/4/2016
+  
+ Methods:
+    + String toString()
+    + Comparator<Student> StudentSurnameComparator 
+    + Comparator<Student> StudentFirstNameComparator 
+    + Comparator<Student> StudentIDComparator 
+    + String getSurname()
+    + String getGivenName()
+    + String getStudentID()
+
+Classes this class requires    
+    java.util.Comparator;
+
  */
 package assignment3;
 
 import java.util.Comparator;
 
-/**
- *
- * @author 041110777
- */
 public class Student {
     
     private String surname;
@@ -22,22 +33,22 @@ public class Student {
     private boolean loveJava;
     private ContinueToDiploma toDiploma;
 
-    public String getSurname() {
-	return surname;
-    }
-
-    public String getGivenName() {
-	return givenName;
-    }
-
-    public String getStudentID() {
-	return studentID;
-    }
-    
     public enum ContinueToDiploma {
         PENDING, CONFIRMED, FALSE 
     }
-            
+    
+    /**
+     * Constructor sets the student information
+     * 
+     * @param surname student's surname
+     * @param givenName student's first name
+     * @param preferredName student's preferred name
+     * @param studentID student's id
+     * @param fullTime true if student is full time, false if not
+     * @param contactNum student's contact number
+     * @param loveJava true if student loves Java, false if not
+     * @param toDiploma true if student continuing to diploma, false if not
+     */
     public Student(String surname, String givenName, String preferredName, String studentID, boolean fullTime, String contactNum, boolean loveJava, ContinueToDiploma toDiploma) {
         this.surname = surname;
         this.givenName = givenName;
@@ -49,6 +60,11 @@ public class Student {
         this.toDiploma = toDiploma;
     }
     
+    /**
+     * Displays a student's information
+     * 
+     * @return student information
+     */
     @Override
     public String toString() {
         return  String.format("%-15s", studentID)
@@ -62,6 +78,9 @@ public class Student {
                 + "\n";    
     }
     
+    /**
+     * Compares two student surnames
+     */
     public static Comparator<Student> StudentSurnameComparator 
 		      = new Comparator<Student>() {
 	@Override
@@ -73,7 +92,10 @@ public class Student {
 	    return studentName1.compareTo(studentName2);
 	}
     };
-        
+    
+    /**
+     * Compares two student first names
+     */
     public static Comparator<Student> StudentFirstNameComparator 
 		      = new Comparator<Student>() {
 	@Override
@@ -85,7 +107,10 @@ public class Student {
 	    return studentName1.compareTo(studentName2);
 	}
     };
-        
+    
+    /**
+     * Compares two student ids
+     */
     public static Comparator<Student> StudentIDComparator 
 		      = new Comparator<Student>() {
 	@Override
@@ -97,4 +122,31 @@ public class Student {
 	    return studentID1.compareTo(studentID2);
 	}
     };    
+    
+    /**
+     * Gets a student's surname
+     * 
+     * @return student's surname 
+     */
+    public String getSurname() {
+	return surname;
+    }
+    
+    /**
+     * Gets a student's first name
+     * 
+     * @return student's first name 
+     */
+    public String getGivenName() {
+	return givenName;
+    }
+    
+    /**
+     * Gets a student's ID
+     * 
+     * @return student ID 
+     */
+    public String getStudentID() {
+	return studentID;
+    }
 }

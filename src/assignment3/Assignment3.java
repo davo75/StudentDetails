@@ -1,44 +1,28 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ This program manages student details by reading and writing student data from a
+ text file.
+ 
+ @author David Pyle 041110777
+ @version 1.0
+ @since 2/5/2016
+  
+ Methods:
+    + void main(String[] args)  
+
  */
 package assignment3;
 
 
-/**
- *
- * @author 041110777
- */
 public class Assignment3 {
 
-    public static String myvar;
-    public static enum SortBy {
-        
-        surname, studentID;
-        
-       
-    }
     /**
-     * @param args the command line arguments
+     * Main method is responsible for creating a StudentDetails object which
+     * basically starts the application.
+     *
+     * @param args none
      */
     public static void main(String[] args) {
-        
-        new StudentDetails();
-        
-        
+	//create a new student details object
+	new StudentDetails();
     }
-	
-   }
-
-
-  
-    
-    
-
-    
-    
-                       
-                                                    
-                 
-
+}
